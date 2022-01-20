@@ -1,0 +1,26 @@
+{
+  "name": "disney",
+  "version": "1.0.0",
+  "description": "challenge",
+  "main": "src/app.js",
+  "dependencies": {
+    "express": "^4.17.2",
+    "method-override": "^3.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edgar-Rios/Challenge-Node-byAlkemy.git"
+  },
+  "author": "Rios Edgar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edgar-Rios/Challenge-Node-byAlkemy/issues"
+  },
+  "homepage": "https://github.com/Edgar-Rios/Challenge-Node-byAlkemy#readme"
+}
