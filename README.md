@@ -1,5 +1,13 @@
 # Challenge Node - by Alkemy
 
+
+### [Documentacion](https://web.postman.co/workspace/My-Workspace~4c70a829-20aa-4469-8146-bf1d0c15f7e6/documentation/19259077-e6dace33-77bf-4fa3-9cf0-e005844db25b)
+
+### [json postman](/Alkemy-Challenge.postman_collection.json)
+Lamento que quizas no se pueda no puedan acceder a la documentacion. no upe como hacer para compartirla
+
+----
+
 retrospectiva
 ------
 
