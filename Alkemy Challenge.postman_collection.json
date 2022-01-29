@@ -1,0 +1,448 @@
+{
+	"info": {
+		"_postman_id": "e6dace33-77bf-4fa3-9cf0-e005844db25b",
+		"name": "Alkemy Challenge",
+		"description": "API sobre el mundo de Disney",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Personajes",
+			"item": [
+				{
+					"name": "Get - lista de personajes.",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMsImlhdCI6MTY0MzQzMzAyNywiZXhwIjoxNjQzNDM2NjI3fQ.AlxC3L8Z9VAFEfBqRvD-KYRkBQycXmzG_pmnMt9vzQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/characters",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "don jose",
+									"disabled": true
+								},
+								{
+									"key": "edad",
+									"value": "55",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Solicitud para obtener todos los personajes guardados.\n\n**Path** ```/characters```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get - detalle de personaje.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/characters/detail/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								"detail",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Solicitud para obtener detalles de un personaje, indicando el id a traves de la url.\n\n**Path** `/characters/detail/:id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete - eliminacion de un personaje.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/characters/delete/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Solicitud para la eliminacion de un pesonaje mediante el id.\n\n***Path*** `/characters/delete/:id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Post - Creacion de un personaje.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "don jose",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"value": "www.imagen.com/hsasjd",
+									"type": "text"
+								},
+								{
+									"key": "edad",
+									"value": "63",
+									"type": "text"
+								},
+								{
+									"key": "historia",
+									"value": "esta historia no acaba",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/characters/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								"create"
+							]
+						},
+						"description": "Solicitud para la creacion de un nuevo personaje\n\n***Path*** `/characters/create`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update - actualizacion de un personaje.",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "imagen",
+									"value": "www.imagen.com/imagenActualizada.jpg",
+									"type": "text"
+								},
+								{
+									"key": "edad",
+									"value": "55",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "señora smith",
+									"type": "text"
+								},
+								{
+									"key": "historia",
+									"value": "no hay..",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/characters/update/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"characters",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Solicitud para actualizar la informacion de un personaje\n\n***Path*** `/characters/update/:id`"
+					},
+					"response": []
+				}
+			],
+			"description": "En esta seccion se realizaran todas las operaciones relacionadas con los personajes (creacion, lectura, actualizacion y eliminacion)"
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Post - Registro de usuario.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ntvg@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "pass",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post - Login.",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ntvg@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "pass",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Esta seccion esta dedicada exclusivamente al registro y logueo de ususarios"
+		},
+		{
+			"name": "Peliculas o Series",
+			"item": [
+				{
+					"name": "Post - Creacion de un film.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "titulo",
+									"value": "doom",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"value": "www.pelisImages.com/asdsadasd",
+									"type": "text"
+								},
+								{
+									"key": "calificacion",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "genero",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/movies/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"create"
+							]
+						},
+						"description": "Solicitud de creacion de pelicula o serie\n\n***Path*** `/movies/create`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get - Detalle de film.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/detail/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"detail",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Solicitud para obtener los detalles de pelicula o serie a traves del id\n\n***Path*** `/movies/detail/:id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Put - Actualizar datos de un film.",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "add_date",
+									"value": "10/30/2020",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/movies/update/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Solicitud para modificar los datos de un registro especifico de una pelicula o serie a traves del id\n\n***Path***  `/movies/update/:id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete - eliminacion de un film.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/delete/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Solicitud para eliminar una pelicula o serie indicandola con su id\n\n***Path***  `/movies/delete/:id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get - Obtener lista.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "las aventuras de mario",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Solicitud para obtener todos los registros existentes de peliculas o series. a este metodo es posible pasarle filtros a traves del `req.query`\n\n***Path***  `/movies`"
+					},
+					"response": []
+				}
+			],
+			"description": "Seccion con los metodos relacionados con las peliculas o series"
+		}
+	]
+}
